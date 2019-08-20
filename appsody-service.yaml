@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: appsody-build-test
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: pushkarnk/docker-test 
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 8080 
